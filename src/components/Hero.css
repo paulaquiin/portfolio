@@ -1,0 +1,37 @@
+.hero-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 0 5%;
+  position: relative;
+}
+
+.hero-content {
+  z-index: 10;
+  max-width: 550px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+
+.hero-canvas-container {
+  height: 60vh;
+  width: 50%;
+  pointer-events: auto;
+  position: relative;
+  border-radius: 50%;
+  /* Removed absolute positioning so it sits nicely in the flex layout */
+}

@@ -1,0 +1,16 @@
+.custom-cursor {
+  position: fixed;
+  border-radius: 50%;
+  background-color: var(--accent-peach);
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: multiply;
+}
+
+body {
+  cursor: none;
+}
+
+a, button {
+  cursor: none;
+}

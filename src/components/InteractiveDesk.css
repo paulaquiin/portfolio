@@ -1,0 +1,111 @@
+.interactive-desk-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  background: #fdfbf7;
+}
+
+.desk-image-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.desk-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.missing-image {
+  background: repeating-linear-gradient(
+    45deg,
+    #fdfbf7,
+    #fdfbf7 10px,
+    #fae3d9 10px,
+    #fae3d9 20px
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.missing-image-message {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  text-align: center;
+  color: var(--text-color);
+  font-family: monospace;
+}
+
+.missing-image .missing-image-message {
+  display: block;
+}
+
+.desk-marker {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.marker-line {
+  width: 1px;
+  height: 30px;
+  background-color: rgba(255,255,255,0.9);
+  margin-top: 5px;
+  position: relative;
+}
+
+.marker-line::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: -2px;
+  width: 5px;
+  height: 5px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.marker-pill {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(5px);
+  padding: 6px 14px 6px 6px;
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255,255,255,0.6);
+}
+
+.marker-icon-wrapper {
+  background: #bb816c; /* Warm terracotta/copper from image */
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+}
+
+.marker-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.9rem;
+  color: #4a403a;
+  font-weight: 600;
+  white-space: nowrap;
+}
