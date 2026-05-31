@@ -1,10 +1,10 @@
 import { useEffect } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Lenis from '@studio-freight/lenis'
 import Navbar from './components/Navbar'
 import Cursor from './components/Cursor'
-import Hero from './components/Hero'
-import Timeline from './components/Timeline'
-import Experimentos from './components/Experimentos'
+import Home from './pages/Home'
+import About from './components/About'
 
 function App() {
   useEffect(() => {
@@ -24,15 +24,16 @@ function App() {
   }, [])
 
   return (
-    <>
+    <BrowserRouter>
       <Cursor />
       <Navbar />
       <main>
-        <Hero />
-        <Timeline />
-        <Experimentos />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
       </main>
-    </>
+    </BrowserRouter>
   )
 }
 

@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 import { FaLaptopCode, FaUserAlt, FaMobileAlt, FaPenNib, FaSearch, FaLightbulb, FaMagic } from 'react-icons/fa'
 import './InteractiveDesk.css'
 
@@ -15,8 +16,14 @@ const markers = [
 
 export default function InteractiveDesk() {
   const containerRef = useRef(null)
+  const navigate = useNavigate()
 
   const handleClick = (sectionId) => {
+    if (sectionId === 'about') {
+      navigate('/about')
+      window.scrollTo(0, 0)
+      return
+    }
     const section = document.getElementById(sectionId)
     if (section) section.scrollIntoView({ behavior: 'smooth' })
   }
@@ -66,6 +73,7 @@ export default function InteractiveDesk() {
                   dragTransition={{ bounceStiffness: 40, bounceDamping: 10 }}
                   whileHover={{ scale: 1.05, y: -5, cursor: 'none' }}
                   whileDrag={{ scale: 1.1, zIndex: 50, cursor: 'none' }}
+                  onClick={() => handleClick(marker.sectionId)}
                   onDragEnd={(event, info) => {
                     // Si el arrastre ha sido mínimo (un click), hacemos scroll
                     if (Math.abs(info.offset.x) < 5 && Math.abs(info.offset.y) < 5) {
